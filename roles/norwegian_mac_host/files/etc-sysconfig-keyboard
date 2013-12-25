@@ -1,0 +1,4 @@
+KEYTABLE="mac-dk-latin1"
+MODEL="pc105"
+LAYOUT="no"
+KEYBOARDTYPE="mac"

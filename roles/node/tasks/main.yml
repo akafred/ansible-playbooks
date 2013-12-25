@@ -1,0 +1,4 @@
+# Node.js-serving tier
+
+- name: Install stuff needed to get node installed
+  yum: name=npm state=latest

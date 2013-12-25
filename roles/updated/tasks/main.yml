@@ -1,0 +1,15 @@
+- name: Capture facts
+  facter:
+  register: facter_result
+
+- name: Store facts
+  shell: echo {{facter_result}} > /vagrant/.facter_${inventory_hostname}_$(date +"%Y_%m_%d_%H_%M_%S")
+
+- name: Capture state of packages
+  shell: rpm -qa --qf "%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}\n" | sort > "/vagrant/.rpm_qa_${inventory_hostname}_$(date +"%Y_%m_%d_%H_%M_%S")"
+
+- name: Update packages
+  yum: state=latest name=*
+
+- name: Capture state of packages
+  shell: rpm -qa --qf "%{NAME}-%{VERSION}-%{RELEASE}.%{ARCH}\n" | sort > "/vagrant/.rpm_qa_${inventory_hostname}_$(date +"%Y_%m_%d_%H_%M_%S")"

@@ -1,0 +1,16 @@
+# Sets up something that approximates Norwegian Mac keyboard...
+# Exceptions:
+# @    right-alt-2
+# {    right-alt-7
+# }    right-alt-0
+# [    right-alt-8
+# ]    right-alt-9
+# |    top-left-key
+# '    @-key
+# \    '-key
+# $    right-alt-4
+# ¤    shift-4
+
+- name: Setup norwegian mac keyboard
+  copy: src=etc-sysconfig-keyboard dest=/etc/sysconfig/keyboard owner=root group=root mode=644 backup=yes
+
