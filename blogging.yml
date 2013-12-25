@@ -1,0 +1,8 @@
+- hosts: local
+  sudo: true
+  roles:
+    - updated
+    - norwegian_mac_host
+    - vim
+    - node
+
